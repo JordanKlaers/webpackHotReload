@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
+    "lodash": "^4.17.5",
     "webpack": "^4.0.1"
   },
   "devDependencies": {
