@@ -1,0 +1,26 @@
+:root {
+  --section-container-width: 768px;
+  --background-color: #009CDE;
+}
+
+.section-container {
+  width: var(--section-container-width);
+  margin: auto;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.ct-grids line {
+  stroke: black;
+  fill: black;
+}
+
+body {
+  margin: 0px;
+}
+
+#app {
+  background-color: var(--background-color);
+}
