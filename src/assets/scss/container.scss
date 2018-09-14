@@ -1,8 +1,9 @@
+@import '_mixins';
+
 .section-container {
 	width: var(--section-container-width);
 	margin: auto;
-	background-color: white;
-	padding: 15px;
-	border: 1px solid transparent;
-	border-radius: 5px;
+	background-color: rgb(255, 255, 255);
+	padding: 30px;
+	@include no-border-rounded-corners(30px);
 }

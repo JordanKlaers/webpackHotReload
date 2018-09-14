@@ -10,11 +10,8 @@ export default {
 	name: 'app',
 	components: {
 		"all-charts": allCharts
-	},
-	beforeCreate() {
-		console.log('vue component beforejhhh crteateafgaegweg');
 	}
 };
 </script>
-<style type="text/css" src="css/app.css">
+<style lang="scss" src="./assets/scss/app">
 </style>

@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 function resolve (dir) {
-  return path.join(__dirname, './', dir)
+	return path.join(__dirname, './', dir)
 }
 
 module.exports = {
@@ -14,17 +15,27 @@ module.exports = {
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: 'dist/',
-		publicPath: '/dist/'
+		publicPath: '/dist/',
+		watchContentBase: true
 	},
 	resolve: {
-		extensions: ['.js', '.vue', '.json'],
+		extensions: ['.js', '.vue', '.json', '.scss'],
 		alias: {
 			'src': resolve('src'),
-			'css': resolve('./src/assets/css')
+			'css': resolve('./src/assets/css'),
+			'scss': resolve('./src/assets/scss')
 		}
 	},
 	module: {
 		rules: [
+			{
+				test: /\.scss$/,
+				use: [
+					"style-loader", // creates style nodes from JS strings
+					"css-loader", // translates CSS into CommonJS
+					"sass-loader" // compiles Sass to CSS
+				]
+			},
 			{
 				test: /\.vue$/,
 				loader: 'vue-loader'
@@ -34,8 +45,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Output Management',
-			template: 'src/index.html',
-			alwaysWriteToDisk: true
+			template: 'src/index.html'
 		}),
 		new HtmlWebpackHarddiskPlugin()
 	],

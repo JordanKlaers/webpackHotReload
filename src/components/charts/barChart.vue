@@ -27,7 +27,6 @@ export default {
 			low: 0,
 			high: 10
 		});
-		// console.log('this.chart', this);
 	}
 };
 </script>
