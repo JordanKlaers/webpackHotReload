@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+
 
 function resolve (dir) {
 	return path.join(__dirname, './', dir)
@@ -22,7 +22,6 @@ module.exports = {
 		extensions: ['.js', '.vue', '.json', '.scss'],
 		alias: {
 			'src': resolve('src'),
-			'css': resolve('./src/assets/css'),
 			'scss': resolve('./src/assets/scss')
 		}
 	},
