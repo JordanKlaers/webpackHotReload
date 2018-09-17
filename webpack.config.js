@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
-
 function resolve (dir) {
 	return path.join(__dirname, './', dir)
 }
@@ -41,6 +40,7 @@ module.exports = {
 			}
 		]
 	},
+	mode: "development",
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Output Management',
