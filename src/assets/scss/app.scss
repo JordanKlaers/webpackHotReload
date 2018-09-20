@@ -6,7 +6,11 @@
 body {
 	margin: 0px;
 }
+* {
+	box-sizing: border-box;
+}
 
 #app {
+	padding: 30px;
 	background-color: var(--background-color)
 }

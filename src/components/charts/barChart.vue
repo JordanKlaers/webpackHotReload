@@ -1,8 +1,5 @@
 <template>
 	<div id="barChart">
-		<div ref="container">
-			
-		</div>
 	</div>
 </template>
 
