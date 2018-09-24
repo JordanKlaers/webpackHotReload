@@ -15,7 +15,9 @@ module.exports = {
 	devServer: {
 		contentBase: 'dist/',
 		publicPath: '/dist/',
-		watchContentBase: true
+		watchContentBase: true,
+		port: 9000,
+		open: true
 	},
 	resolve: {
 		extensions: ['.js', '.vue', '.json', '.scss'],
