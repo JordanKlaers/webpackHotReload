@@ -3,14 +3,17 @@
 @import 'barChart';
 @import '_mixins';
 
-body {
+body, html {
 	margin: 0px;
+	height: 100%;
 }
 * {
 	box-sizing: border-box;
 }
 
 #app {
+	height: 100%;
 	padding: 30px;
-	background-color: var(--background-color)
+	background-color: var(--background-color);
+	position: relative;
 }

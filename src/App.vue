@@ -23,8 +23,28 @@ export default {
 		}
 	},
 	mounted() {
-		window.addEventListener('wheel', function() {
-			console.log('scroilling -> nothing');
+		window.addEventListener('wheel', function(event) {
+			console.log('scroilling', event.deltaY);
+			let div = document.getElementById('allChart');
+
+			if (event.deltaY == -100) {
+				if (div.classList.contains('in-view')) {
+					div.classList.remove("in-view");
+					div.classList.add("up");
+				} else if (div.classList.contains('down')) {
+					div.classList.remove("down");
+					div.classList.add("in-view");
+				}
+			}
+			if (event.deltaY == 100) {
+				if (div.classList.contains('in-view')) {
+					div.classList.remove("in-view");
+					div.classList.add("down");
+				} else if (div.classList.contains('up')) {
+					div.classList.remove("up");
+					div.classList.add("in-view");
+				}
+			}
 		})
 	},
 	methods: {

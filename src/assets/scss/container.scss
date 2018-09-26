@@ -5,7 +5,23 @@
 	box-sizing: border-box;
 	width: 100%;
 	margin: auto;
-	background-color: rgb(36, 202, 50);
+	background-color: rgb(255, 255, 255);
 	padding: 30px;
 	@include no-border-rounded-corners(30px);
+	position: absolute;
+	top: 250px;
+	transition: top 2s, opacity 1s;
+}
+
+.up {
+	top: 100px;
+	opacity: 0;
+}
+.in-view {
+	top: 250px;
+	opacity: 1;
+}
+.down {
+	top: 400px;
+	opacity: 0;
 }
