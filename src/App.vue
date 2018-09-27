@@ -1,21 +1,24 @@
 <template>
 	<div id="app">
-		<all-charts></all-charts>
+		<card></card>
+		<!-- <all-charts></all-charts> -->
 		<button v-on:click="transform">
 			click me
 		</button>
 		<div id="mutate">
-			huh
+			huh 
 		</diV>
 	</div>
 </template>
 
 <script>
 import allCharts from './components/charts/allCharts';
+import card from './components/cards/card';
 export default {
 	name: 'app',
 	components: {
-		"all-charts": allCharts
+		"all-charts": allCharts,
+		"card": card
 	},
 	data() {
 		return {

@@ -3,8 +3,9 @@
 @import 'barChart';
 @import '_mixins';
 
-body {
+body, html {
 	margin: 0px;
+	height: 100%;
 }
 * {
 	box-sizing: border-box;
@@ -12,5 +13,7 @@ body {
 
 #app {
 	padding: 30px;
-	background-color: var(--background-color)
+	background-color: var(--background-color);
+	min-height: 100%;
+	width: 100%;
 }
