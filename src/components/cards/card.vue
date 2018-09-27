@@ -1,6 +1,8 @@
 <template>
-	<div class="card-container">
-		hello o
+	<div class="card in-view">
+		<div class="card-title">
+			Super awesome title	
+		</div>
 	</div>
 </template>
 
