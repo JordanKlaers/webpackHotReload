@@ -1,5 +1,5 @@
 <template>
-	<div id="allChart" class="in-view section-container">
+	<div id="allChart" class="in-view card-content">
 		<barChart></barChart>
 	</div>
 </template>

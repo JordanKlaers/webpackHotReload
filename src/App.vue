@@ -2,12 +2,12 @@
 	<div id="app">
 		<card></card>
 		<!-- <all-charts></all-charts> -->
-		<button v-on:click="transform">
+		<!-- <button v-on:click="transform">
 			click me
 		</button>
 		<div id="mutate">
 			huh 
-		</diV>
+		</diV> -->
 	</div>
 </template>
 
@@ -28,22 +28,41 @@ export default {
 	mounted() {
 		window.addEventListener('wheel', function(event) {
 			let div = document.getElementsByClassName("card")[0];
+			let children = div.children
 			if (event.deltaY < 0) {
 				if (div.classList.contains('in-view')) {
 					div.classList.remove("in-view");
 					div.classList.add("up");
+					for (let el in children) {
+						children[el].classList.remove("fade-in");
+						children[el].classList.add("fade-out");
+					};
 				} else if (div.classList.contains('down')) {
 					div.classList.remove("down");
 					div.classList.add("in-view");
+					for (let el in children) {
+						children[el].classList.remove("fade-out");
+						children[el].classList.add("fade-in");
+					};
 				}
 			}
 			if (event.deltaY > 0) {
+				console.log('scroll down');
 				if (div.classList.contains('in-view')) {
+					console.log('was in view');
 					div.classList.remove("in-view");
 					div.classList.add("down");
+					for (let el in children) {
+						children[el].classList.remove("fade-in");
+						children[el].classList.add("fade-out");
+					};
 				} else if (div.classList.contains('up')) {
 					div.classList.remove("up");
 					div.classList.add("in-view");
+					for (let el in children) {
+						children[el].classList.remove("fade-out");
+						children[el].classList.add("fade-in");
+					};
 				}
 			}
 		})
